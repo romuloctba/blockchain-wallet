@@ -14,4 +14,10 @@ export class AppComponent {
     // blockchain svc
     this.blockchain = blockchainService.blockchain;
   }
+
+  mine() {
+    const result = this.blockchainService.mine();
+    console.log(`Mining result is ${result}`);
+    console.log('chain', this.blockchainService.blockchain);
+  }
 }

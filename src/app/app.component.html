@@ -1,13 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h2>Blockchain</h2>
-  <ul>
-    <li [routerLink]="['connection']">Connection</li>
-    <li [routerLink]="['send-transaction']">Send Transaction</li>
-    <li>Setup</li>
+  <h2>Blockchain  <button (click)="mine()">Mine</button></h2>
+  <ul style="display: inline-block">
+    <li style="display: inline-block"[routerLink]="['connection']">Connection</li>
+    <li style="display: inline-block"[routerLink]="['send-transaction']">Send Transaction</li>
+    <li style="display: inline-block">Setup</li>
   </ul>
 </div>
-<pre>
-{{this.blockchain | json}}
-</pre>
 <router-outlet></router-outlet>
+<ul>
+  <li>
+    Pending Transactions: {{blockchain.pendingTransactions.length}} <br>
+    Nodes Connected: {{blockchain.networkNodes.length}} <br>
+    Blocks Mined: {{blockchain.chain.length}}
+  </li>
+  <li><hr /></li>
+  <li *ngFor="let block of blockchain.chain">
+    Transactions: {{block.transactions.length}}<br>
+    Hash: {{block.hash}}<br>
+  </li>
+</ul>
