@@ -10,7 +10,7 @@ export class Blockchain {
     public networkNodes: string[] = [];
 
     constructor (GENESIS_BLOCK: Block, nodeUrl: string) {
-        this.chain = [];
+        this.chain = [GENESIS_BLOCK];
         this.pendingTransactions = [];
         this.nodeUrl = nodeUrl;
         this.networkNodes = [];
@@ -49,7 +49,7 @@ export class Blockchain {
     addToPendingTransactions(transaction: Transaction) {
         this.pendingTransactions.push(transaction);
 
-        return this.getLatestBlock()//.index + 1;
+        return this.getLatestBlock().index + 1;
     }
 
     hashBlock(prevBlockHash: string, currentBlock: BlockData, nonce: string | number) {

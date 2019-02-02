@@ -17,7 +17,7 @@ export class BlockchainService {
   }
 
   addTransaction(transaction: Transaction) {
-    this.blockchain.addToPendingTransactions(transaction);
+    return this.blockchain.addToPendingTransactions(transaction);
   }
 
   addNode(nodeUrl: string) {

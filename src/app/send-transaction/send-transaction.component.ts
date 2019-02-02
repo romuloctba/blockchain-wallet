@@ -19,7 +19,10 @@ export class SendTransactionComponent implements OnInit {
   send(amount: number, recipient: string) {
     console.log(`send ${amount} to ${recipient}`);
     const transaction = new Transaction(amount, this.nodeUrl, recipient);
-    this.blockchainService.addTransaction(transaction);
-    
+    const result = this.blockchainService.addTransaction(transaction);
+    if (result) {
+      console.log(`Transaction added as pending to Block ${result}`);
+    }
+
   }
 }
