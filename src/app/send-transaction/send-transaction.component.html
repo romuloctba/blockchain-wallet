@@ -1,0 +1,7 @@
+<div>
+  <label for="amount">Amount</label>
+  <input #amount type="number" step="0.5">
+  <label for="recipient">Recipient</label>
+  <input #recipient placeholder="Recipient ID">
+  <button (click)="send(amount.value, recipient.value)">Send</button>
+</div>
