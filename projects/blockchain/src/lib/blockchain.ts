@@ -2,6 +2,7 @@ import { Transaction } from './transaction';
 import { Block } from './block';
 import { BlockData } from './block-data';
 import { sha256 } from 'hash.js';
+import { v4 as uuid} from 'uuid';
 
 export class Blockchain {
     public chain: Block[];
@@ -9,10 +10,10 @@ export class Blockchain {
     public nodeUrl: string;
     public networkNodes: string[] = [];
 
-    constructor (GENESIS_BLOCK: Block, nodeUrl: string) {
+    constructor (GENESIS_BLOCK: Block) {
         this.chain = [GENESIS_BLOCK];
         this.pendingTransactions = [];
-        this.nodeUrl = nodeUrl;
+        this.nodeUrl = uuid();
         this.networkNodes = [];
     }
 

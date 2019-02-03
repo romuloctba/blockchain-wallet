@@ -1,0 +1,3 @@
+export enum SOCKETMESSAGES {
+    ADD_NODE='ADD_NODE'
+}

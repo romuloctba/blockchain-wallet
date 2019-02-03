@@ -1,22 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h2>Blockchain  <button (click)="mine()">Mine</button></h2>
-  <ul style="display: inline-block">
-    <li style="display: inline-block"[routerLink]="['connection']">Connection</li>
-    <li style="display: inline-block"[routerLink]="['send-transaction']">Send Transaction</li>
-    <li style="display: inline-block">Setup</li>
-  </ul>
+  <h2>Blockchain</h2>
+  <button (click)="mine()">Mine</button>
+  <button [routerLink]="['connection']">Connection</button>
+  <div>
+      <button [routerLink]="['send-transaction']">Send Transaction</button>
+  </div>
 </div>
 <router-outlet></router-outlet>
+<div>
+  This NodeUrl: {{blockchain.nodeUrl}}<br>
+  Pending Transactions: {{blockchain.pendingTransactions.length}} <br>
+  Nodes Connected: {{blockchain.networkNodes.length}} <br>
+  Blocks Mined: {{blockchain.chain.length}}
+</div>
+<div><hr /></div>
 <ul>
-  <li>
-    Pending Transactions: {{blockchain.pendingTransactions.length}} <br>
-    Nodes Connected: {{blockchain.networkNodes.length}} <br>
-    Blocks Mined: {{blockchain.chain.length}}
-  </li>
-  <li><hr /></li>
-  <li *ngFor="let block of blockchain.chain">
+  <li *ngFor="let block of blockchain.chain; index as i">
     Transactions: {{block.transactions.length}}<br>
     Hash: {{block.hash}}<br>
+    <span *ngIf="i == 0"><strong>(GENESIS_BLOCK)</strong></span>
   </li>
 </ul>
