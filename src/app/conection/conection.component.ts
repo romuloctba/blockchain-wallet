@@ -9,8 +9,7 @@ import { BlockchainService } from 'projects/blockchain/src/public_api';
 export class ConectionComponent implements OnInit {
 
   constructor(
-    private blockchainService: BlockchainService,
-    @Inject('nodeUrl') private nodeUrl: string
+    private blockchainService: BlockchainService
     ) { }
 
   ngOnInit() {
