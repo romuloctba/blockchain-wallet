@@ -1,10 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
-import { Block } from './block';
-import { Blockchain } from './blockchain';
-import { Transaction } from './transaction';
-import { BroadcastMessage } from './broadcast-message';
+import { Block } from './models/block';
+import { Blockchain } from './models/blockchain';
+import { Transaction } from './models/transaction';
+import { BroadcastMessage } from './models/broadcast-message';
 import { MessageListenerService } from './message-listener.service';
-import { SOCKETMESSAGES } from './socket-messages.enum';
+import { SOCKETMESSAGES } from './models/socket-messages.enum';
 @Injectable({
   providedIn: 'root'
 })

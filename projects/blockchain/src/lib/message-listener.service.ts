@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { WebSocketService } from './web-socket.service';
-import { BroadcastMessage } from 'projects/blockchain/src/lib/broadcast-message';
+import { BroadcastMessage } from './models/broadcast-message';
 
 export interface Message {
   author: string,
