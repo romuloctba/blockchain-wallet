@@ -1,5 +1,7 @@
 # BlockchainWallet
 
+- To use the p2p functionality, you'll need something like this: https://github.com/romuloctba/socket-blockchain-broker
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
 ## Development server
